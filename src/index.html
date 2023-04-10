@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plagiarism Detector</title>
+    <link href="/styles/styles.css" rel="stylesheet">
+</head>
+<body id="body">
+    <div class="loadingOverlay hidden">
+        <img src="./images/loading.svg"/>
+    </div>
+    <div class="mainPage">
+        <div class="title"> Plagiarism Detector </div>
+        <div class="dropFileArea">
+            <label for="fileInput" class="uploadBoxText fileLabel">Choose a file</label>
+            <div id="dragText" class="uploadBoxText noselect"> or drag here</div>
+            <span class="hint">* maximum 2 files</span>
+            <input id="fileInput" type="file" accept="any" multiple>
+            <div id="fileName"></div>
+        </div>
+
+        <button id="checkPlagBtn" class="btn">Check Plagiarism</button>
+
+        <div id="reportAreaMulti" class="reportAreaMulti hidden">
+            <div id="reportAreaTitleMulti">Plagiarism Report - File Pairs</div>
+            <div id="multiFile">
+                <span>
+                    <span id="userMultiFileName1" class="bold"></span> 
+                    is 
+                    <span id="userMultiFileSimilar" class="bold"></span>
+                    plagiarized verses
+                    <span id="userMultiFileName2" class="bold"></span>
+                </span>
+            </div>
+        </div> 
+
+        <div id="reportArea" class="reportArea hidden">
+            <div id="reportAreaTitle">Plagiarism Report</div>
+            <div id="overallPlag">
+                <span>
+                    <span id="userFileName1" class="bold"></span>
+                    is 
+                    <span id="overallPlagPercent" class="bold"></span> 
+                    plagiarized.
+                </span>
+                <span>
+                    <span id="userFileName2" class="bold"></span> 
+                    was compared to 
+                    <span id="numberCompared" class="bold"></span>
+                    files in our database.
+                    </span>
+            </div>
+            <button id="moreDetailBtn" class="btn">View details</button>
+            <div id="detailedReportArea" class="detailedReportArea hidden">
+                <div id="fileReport" class="reportBox">
+                    <div class="reportHeader">File report</div>
+                    <div class="reportText">Files are compared against other files altogether</div>
+
+                    <div class="percentagesBox">
+                        <span class="percentages">
+                            <span id="filePlagPercent">0%</span>
+                            <span>Plagiarized</span>
+                        </span>
+                        <div class="bar">
+                            <div class="filePlagBar"></div>
+                        </div>
+                        <span class="percentages">
+                            <span id="fileUniquePercent">0%</span>
+                            <span>Unique</span>
+                        </span>
+                    </div>
+                    
+                </div>
+                <div id="lineReport" class="reportBox">
+                    <div class="reportHeader">Line report</div>
+                    <div class="reportText">Lines are compared against lines in other files</div>
+
+                    <div class="percentagesBox">
+                        <span class="percentages">
+                            <span id="linePlagPercent">0%</span>
+                            <span>Plagiarized</span>
+                        </span>
+                        <div class="bar">
+                            <div class="linePlagBar"></div>
+                        </div>
+                        <span class="percentages">
+                            <span id="lineUniquePercent">0%</span>
+                            <span>Unique</span>
+                        </span>
+                    </div>
+                </div>
+                <div id="filePairComparison" class="reportBox">
+                    <div class="reportHeader">File pairs report</div>
+                    <ul id="filePairList">
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+    
+
+</body>
+<script src="/main.js"></script>
+</html>

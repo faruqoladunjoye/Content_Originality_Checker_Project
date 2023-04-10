@@ -1,0 +1,256 @@
+:root{
+    --colour-palette-1: #253653ff;
+    --colour-palette-2: #e7e7e8ff;
+    --colour-palette-3: #ffffff;
+    --colour-palette-4: #727f94ff;
+    /* --colour-palette-4: #DA6466; */
+    
+    
+    --colour-palette-5-bright: #9fffe4;
+    --colour-palette-5: #61c079;
+        
+    --colour-text: #2e1a3d;
+    --colour-text-dark: #220e30;
+    
+    --background-colour: #323244;
+}
+
+.noselect{
+    user-select: none;
+}
+
+.hidden{
+    visibility: hidden;
+    display: none !important;
+}
+
+html{
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 640px;
+    background-color: var(--colour-palette-1);
+}
+
+.title{
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--colour-palette-3);
+    margin: 2rem;
+}
+
+.mainPage{
+    background-color: var(--background-colour);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    min-height: 80vh;
+    min-width: 80vw;
+    box-shadow: 2px 2px 6px var(--background-colour);
+
+}
+
+.loadingOverlay {
+    display: flex;
+    position: absolute;
+
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+    width: 100%;
+}
+
+/* Drag and drop area */
+
+.dropFileArea{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 35vw;
+    min-height: 40vh;
+    margin: 1.5rem;
+    
+    border: var(--colour-palette-0) 1px solid;
+    box-shadow: 2px 2px 6px black;
+    background-color: var(--colour-palette-2);
+
+    outline: 2px dashed var(--colour-palette-1);
+    outline-offset: -10px;
+}
+
+#fileInput {
+    display: none;
+}
+
+.hint{
+    font-size: 0.8rem;
+    color: var(--colour-text);
+    margin-top: 0.5rem;
+}
+
+.uploadBoxText{
+    color: var(--colour-text);
+    margin: 0 0.3rem;
+    font-size: 2rem;
+}
+
+.fileLabel{
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.fileLabel:hover{
+    color: var(--colour-palette-5)
+}
+
+#fileName{
+    display: flex;
+    flex-direction: column;
+    color: var(--colour-text-dark);
+    margin-top: 2.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.btn{
+    cursor: pointer;
+
+    width: 200px;
+    height: 50px;
+
+    background-color: var(--colour-palette-5);
+    border: solid 1px var(--colour-palette-5-bright);
+    border-radius: 20px;
+    color: var(--colour-text-dark);
+
+    font-size: 1.1rem;
+    font-weight: 550;
+
+    margin: 16px;
+    transition: all 0.2s;
+}
+
+.btn:hover{
+    background-color: var(--colour-palette-5-bright);
+}
+
+/* Report area */
+
+#reportArea, #reportAreaMulti{
+    display: flex;
+
+    width: 55vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--colour-palette-2);
+    margin: 2rem;
+}
+
+#reportAreaTitle, #reportAreaTitleMulti{
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    text-decoration: underline;
+}
+
+#overallPlag, #multiFile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-size: 1.3rem;
+
+    margin: 1rem;
+}
+
+.bold{
+    font-weight: 700;
+}
+
+.reportBox{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+
+    padding: 1.5rem;
+
+    border-top: #2e1a3d 2px solid;
+
+}
+
+.reportHeader{
+    width: 100%;
+    font-size: 2rem;
+    text-align: center;
+    text-decoration: underline;
+
+    margin: 1.5rem;
+}
+
+.reportText{
+    width: 100%;
+    text-align: center;
+}
+
+.percentagesBox{
+    display: flex;
+
+    align-items: center;
+    justify-content: space-evenly;
+
+    width: 100%;
+    margin-top: 1rem;
+
+}
+
+.percentages{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-size: 1.5rem;
+}
+
+.bar{
+    height: 20px;
+    width: 500px;
+    background-color: green;
+}
+
+.linePlagBar{
+    height: 20px;
+    width: 250px;
+    background-color: red;
+}
+
+.filePlagBar{
+    height: 20px;
+    width: 250px;
+    background-color: red;
+}
+
+.detailedReportArea {
+    width: 55vw;
+}
+
+#filePairList{
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+#filePairList li{
+    padding: 0.5rem;
+}
